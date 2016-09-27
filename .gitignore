@@ -2,3 +2,5 @@ lab_one/vhdl/db/
 *.qpf
 *.qsf
 *.qws
+lab_one/vhdl/output_files/
+lab_one/vhdl/incremental_db/
