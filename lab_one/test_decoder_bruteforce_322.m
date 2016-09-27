@@ -1,6 +1,6 @@
 %% Test the bruteforce decoding
 % Tests the entire message encoding and decoding pipeline. 
-
+function test_decoder_bruteforce_322 ()
 % First generate a list of all binary messages of length 2
 A = generate_binary_values(2);
 
@@ -15,5 +15,6 @@ end
 
 % Attempt to decode the words and recover from erasures
 for index = 1:size(erased,1)
-decode_bruteforce(erased(index,:), 2)
+decode_bruteforce(erased(index,:), 2);
+end
 end
