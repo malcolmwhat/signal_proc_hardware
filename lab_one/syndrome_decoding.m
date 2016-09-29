@@ -22,6 +22,6 @@ function [ output_args ] = syndrome_decoding( reception_message )
         corrected_message = mod(reception_message + error_vector, 2);
         output_args = corrected_message(1:3);
     else
-       output_args = [NaN NaN NaN];
+       output_args = reception_message(1:3);
     end
 end
