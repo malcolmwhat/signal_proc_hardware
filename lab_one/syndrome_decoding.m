@@ -9,8 +9,8 @@ function [ output_args ] = syndrome_decoding( reception_message )
     G = encoder_633(eye(3));
     H = [G(1:size(G,1), size(G,2)/2+1:size(G,2)) G(1:size(G,1), 1:size(G,2)/2)];
     E = eye(6);
-    ref_synd = H*E;
-    synd = H*reception_message';
+    ref_synd = mod(H*E,2);
+    synd = mod(H*reception_message',2);
     e_pos = ismember(ref_synd', synd', 'rows');
 
     for i = 1:size(e_pos, 1)
