@@ -31,11 +31,32 @@ for i = 1:length(er_probs)
     
     % Count the number of failed decodes
     check_eqs = messages == decoder_res;
-    temp = [];
+    correct_bits = 0;
+    total_bits = 0;
     for k = 1:size(data,1)
-        temp(k) = sum(check_eqs(k,:)) == 3;
+        correct_bits = sum(check_eqs(k,:)) + correct_bits;
+        total_bits = 3 + total_bits;
     end
     
-    er_count(i) = sum(temp == 0);
+    er_count(i) = total_bits - correct_bits;
 end
+
+for i = 1:length(er_count)
+    prob = er_probs(i)
+    er = er_count(i)/total_bits
+end
+
+
+figure
+h = loglog(er_probs,er_count/total_bits, '-s')
+
+title('Erasure rate of the gaussian decoder for given erasure channel bit erasure probabilities');
+xlabel('Probability of bit erasure in the transmission channel(erasures/bit)');
+ylabel('Number of erased bits over total transmitted bits(erasures/bit)');
+
+ax = gca;
+ax.XGrid = 'on';
+ax.YGrid = 'on';
+ax.XMinorGrid = 'on';
+ax.YMinorGrid = 'on';
 
