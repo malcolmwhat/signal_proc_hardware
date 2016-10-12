@@ -4,3 +4,7 @@ lab_one/vhdl/db/
 *.qws
 lab_one/vhdl/output_files/
 lab_one/vhdl/incremental_db/
+lab_one/vhdl/db/
+lab_two/vhdl/output_files/
+lab_two/vhdl/incremental_db/
+lab_two/vhdl/db/
