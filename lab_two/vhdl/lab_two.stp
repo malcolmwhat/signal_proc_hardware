@@ -4,10 +4,7 @@
   </display_tree>
   <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
     <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
-    <position_info>
-      <single attribute="active tab" value="0"/>
-    </position_info>
-    <signal_set global_temp="1" name="signal_set: 2016/10/12 09:46:28  #0">
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2016/10/12 09:46:28  #0">
       <clock name="CLK" polarity="posedge" tap_mode="classic"/>
       <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="no" trigger_out_enable="no"/>
       <top_entity/>
@@ -30,30 +27,29 @@
       </signal_vec>
       <presentation>
         <unified_setup_data_view>
-          <node data_index="2" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="bitstream" storage_index="2" tap_mode="classic" trigger_index="2" type="output pin"/>
-          <node data_index="0" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="C1" storage_index="0" tap_mode="classic" trigger_index="0" type="output pin"/>
-          <node data_index="1" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="C2" storage_index="1" tap_mode="classic" trigger_index="1" type="output pin"/>
+          <node data_index="2" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="bitstream" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="output pin"/>
+          <node data_index="0" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="C1" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="output pin"/>
+          <node data_index="1" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="C2" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="output pin"/>
         </unified_setup_data_view>
         <data_view>
-          <net data_index="2" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="bitstream" storage_index="2" tap_mode="classic" trigger_index="2" type="output pin"/>
-          <net data_index="0" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="C1" storage_index="0" tap_mode="classic" trigger_index="0" type="output pin"/>
-          <net data_index="1" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="C2" storage_index="1" tap_mode="classic" trigger_index="1" type="output pin"/>
+          <net data_index="2" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="bitstream" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="output pin"/>
+          <net data_index="0" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="C1" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="output pin"/>
+          <net data_index="1" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="C2" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="output pin"/>
         </data_view>
         <setup_view>
-          <net data_index="2" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="bitstream" storage_index="2" tap_mode="classic" trigger_index="2" type="output pin"/>
-          <net data_index="0" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="C1" storage_index="0" tap_mode="classic" trigger_index="0" type="output pin"/>
-          <net data_index="1" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" name="C2" storage_index="1" tap_mode="classic" trigger_index="1" type="output pin"/>
+          <net data_index="2" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="bitstream" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="2" tap_mode="classic" trigger_index="2" type="output pin"/>
+          <net data_index="0" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="C1" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="0" tap_mode="classic" trigger_index="0" type="output pin"/>
+          <net data_index="1" is_data_input="true" is_node_valid="true" is_storage_input="true" is_trigger_input="true" level-0="dont_care" name="C2" pwr_level-0="dont_care" pwr_storage-0="dont_care" pwr_storage-1="dont_care" pwr_storage-2="dont_care" storage-0="dont_care" storage-1="dont_care" storage-2="dont_care" storage_index="1" tap_mode="classic" trigger_index="1" type="output pin"/>
         </setup_view>
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="76AF09BC" attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2016/10/12 09:46:28  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="76AF09BC" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2016/10/12 09:46:28  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">
             <power_up enabled="yes">
-            </power_up>
-            <op_node/>
+            </power_up><op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -77,24 +73,22 @@
           </storage_qualifier_level>
         </storage_qualifier_events>
         <log>
-          <data global_temp="1" name="log: 2016/10/12 09:50:40  #0" power_up_mode="false" sample_depth="128" trigger_position="16">110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010</data>
+          <data global_temp="1" name="log: 2016/10/18 17:40:09  #0" power_up_mode="false" sample_depth="128" trigger_position="16">110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110110110000000000000111010000110001101010001010110</data>
           <extradata>1111111111111111T111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
         </log>
       </trigger>
     </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="130944"/>
+      <single attribute="zoom offset denominator" value="1"/>
+    </position_info>
   </instance>
   <mnemonics/>
-  <global_info>
-    <single attribute="active instance" value="0"/>
-    <single attribute="config widget visible" value="1"/>
-    <single attribute="data log widget visible" value="1"/>
-    <single attribute="hierarchy widget visible" value="1"/>
-    <single attribute="instance widget visible" value="1"/>
-    <single attribute="jtag widget visible" value="1"/>
-    <multi attribute="frame size" size="2" value="2560,1506"/>
-    <multi attribute="jtag widget size" size="2" value="456,310"/>
-    <single attribute="sof manager visible" value="1"/>
-  </global_info>
   <embedded_sof_files>
     <embedded_sof_file id_crc_pairs="30006E00,352A6C70" name="lab_two.sof" size="843356">eJzsnQuA3FS9/89kp8vsdoHZtsKiWE8ftIsILG+8VkmXpS1YoQI+L0J4XlCU
 8m593bOlYFWUVVELKq6iwr2+UPHNxfBSUEQv+LhXL1oef3yCFVR888/J7CaZ
@@ -764,7 +758,19 @@ fuMNToXpUe121W6+iZercnvZOBeiXZk7KaEGc5L+UL23H6b47/HmP/k//7ra
 r+OXP1Sjr/yqRF9zvP5vy1/V6Gu0vvon2HqlbuQqmH5t6loo8Cq4fLjsxkfM
 8osUfDXmjfKPpwyv74/H4w8/HY9//v6vf/nxh3/87Xh+Q/z17f8BexSKKg==
 
+    
     </embedded_sof_file>
   </embedded_sof_files>
   <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="data log widget visible" value="1"/>
+    <single attribute="hierarchy widget visible" value="1"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <single attribute="sof manager visible" value="1"/>
+    <multi attribute="frame size" size="2" value="2560,1506"/>
+    <multi attribute="jtag widget size" size="2" value="456,310"/>
+  </global_info>
 </session>
