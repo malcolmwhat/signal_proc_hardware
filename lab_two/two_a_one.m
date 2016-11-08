@@ -6,11 +6,11 @@ bin =  generate_binary_values(4);
 vals = zeros(16,8);
 diffs = zeros(16, 8);
 r = [0.54 -0.12 1.32 0.41 0.63 1.25 0.37 -0.02];
-
+r = [ 0 0 1 1 1 1 0 0];
 
 for i = 1:length(bin)
     vals(i,:) = encoder_844(bin(i,:));
-    diffs(i,:) = vals(i,:) - r; % 8 floating point subtractions
+    diffs(i,:) = abs(vals(i,:) - r); % 8 floating point subtractions
 end % 8 * 16 = 128 floating point subtractions
 
 % squaring: 128 multiplications
