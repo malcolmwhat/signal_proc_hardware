@@ -1,4 +1,4 @@
-function [ codeword ] = two_c_one(r)
+function [ shortest_path_bin ] = two_c_one(r)
 %This function decodes the given (8,4,4) codeword using Viterbi decoding.
 
 % This is the indicator for each of the tfs that is made
