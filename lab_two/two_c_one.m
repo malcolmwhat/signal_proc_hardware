@@ -12,32 +12,32 @@ tfs = [
 % First state transition: 4 edges
 top_s1 = (r(1))^2 + (r(2))^2;
 top_s1_2 = (r(1)-1)^2 + (r(2)-1)^2;
-bottom_s1 = (r(1))^2 + (r(2)-1)^2;
-bottom_s1_2 = (r(1)-1)^2 + (r(2))^2;
+bottom_s1 = (r(1)-1)^2 + (r(2))^2;
+bottom_s1_2 = (r(1))^2 + (r(2)-1)^2;
 
 edges_stage1 = [ top_s1 top_s1_2 bottom_s1 bottom_s1_2 ]';
 
 % Second state transition
 stay_top_s2 = (r(3))^2 + (r(5))^2;
 stay_top_s2_2 = (r(3)-1)^2 + (r(5)-1)^2;
-stay_bottom_s2 = (r(3))^2 + (r(5)-1)^2;
-stay_bottom_s2_2 = (r(3)-1)^2 + (r(5))^2;
+stay_bottom_s2 = (r(3)-1)^2 + (r(5))^2;
+stay_bottom_s2_2 = (r(3))^2 + (r(5)-1)^2;
 
 edges_stage2 = [ stay_top_s2 stay_top_s2_2 stay_bottom_s2 stay_bottom_s2_2 ]';
 
 % Third state transition
 stay_top_s3 = (r(4))^2 + (r(6))^2;
 stay_top_s3_2 = (r(4)-1)^2 + (r(6)-1)^2;
-stay_bottom_s3 = (r(4))^2 + (r(6)-1)^2;
-stay_bottom_s3_2 = (r(4)-1)^2 + (r(6))^2;
+stay_bottom_s3 = (r(4)-1)^2 + (r(6))^2;
+stay_bottom_s3_2 = (r(4))^2 + (r(6)-1)^2;
 
 edges_stage3 = [ stay_top_s3 stay_top_s3_2 stay_bottom_s3 stay_bottom_s3_2 ]';
 
 % Fourth state transition
 top_s4 = (r(7))^2 + (r(8))^2;
 top_s4_2 = (r(7)-1)^2 + (r(8)-1)^2;
-bottom_s4 = (r(7))^2 + (r(8)-1)^2;
-bottom_s4_2 = (r(7)-1)^2 + (r(8))^2;
+bottom_s4 = (r(7)-1)^2 + (r(8))^2;
+bottom_s4_2 = (r(7))^2 + (r(8)-1)^2;
 
 edges_stage4 = [ top_s4 top_s4_2 bottom_s4 bottom_s4_2 ]';
 
