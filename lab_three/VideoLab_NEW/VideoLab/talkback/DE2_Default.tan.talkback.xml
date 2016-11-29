@@ -1,0 +1,135 @@
+
+<!--
+This XML file (created on Fri Jun 02 12:03:48 2006) contains limited information
+from the compilation of logic designs using Quartus II software (BUT NOT THE
+LOGIC DESIGN FILES) that will be transmitted to Altera Corporation through
+operation of the "TalkBack" feature.  To enable/disable this feature, run
+qtb_install.exe located in your quartus/bin folder.  For more information, go
+to www.altera.com/products/software/download/dnl-download_license.html
+-->
+<talkback>
+<ver>5.1</ver>
+<schema>quartus_version_5.1_build_176.xsd</schema><license>
+	<host_id>00123f4b0b3f</host_id>
+	<nic_id>00123f4b0b3f</nic_id>
+	<cdrive_id>882dfa9e</cdrive_id>
+</license>
+<tool>
+	<name>Quartus II</name>
+	<version>5.1</version>
+	<build>Build 176</build>
+	<binary_type>32</binary_type>
+	<module>quartus_tan.exe</module>
+	<edition>Web Edition</edition>
+	<compilation_end_time>Fri Jun 02 12:03:48 2006</compilation_end_time>
+</tool>
+<machine>
+	<os>Windows XP</os>
+	<cpu>
+		<proc_count>2</proc_count>
+		<cpu_freq units="MHz">3391</cpu_freq>
+	</cpu>
+	<ram units="MB">1023</ram>
+</machine>
+<top_file>C:/Documents and Settings/Bruce Land/My Documents/EEdocs/ECE576/DE2/MyExamples/DE2_VGA1/DE2_Default</top_file>
+<mep_data>
+	<command_line>quartus_tan --read_settings_files=off --write_settings_files=off DE2_Default -c DE2_Default --timing_analysis_only</command_line>
+</mep_data>
+<software_data>
+	<smart_recompile>off</smart_recompile>
+</software_data>
+<clock_settings_summary>
+	<row>
+		<clock_node_name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk0</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">25.2</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>CLOCK_27</based_on>
+		<multiply_base_fmax_by>14</multiply_base_fmax_by>
+		<divide_base_fmax_by>15</divide_base_fmax_by>
+		<offset units="ns">-2.407</offset>
+	</row>
+	<row>
+		<clock_node_name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk1</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">18.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>CLOCK_27</based_on>
+		<multiply_base_fmax_by>2</multiply_base_fmax_by>
+		<divide_base_fmax_by>3</divide_base_fmax_by>
+		<offset units="ns">-2.407</offset>
+	</row>
+	<row>
+		<clock_node_name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk2</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">25.2</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>CLOCK_27</based_on>
+		<multiply_base_fmax_by>14</multiply_base_fmax_by>
+		<divide_base_fmax_by>15</divide_base_fmax_by>
+		<offset units="ns">-12.329</offset>
+	</row>
+	<row>
+		<clock_node_name>CLOCK_27</clock_node_name>
+		<type>User Pin</type>
+		<fmax_requirement units="MHz">27.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<multiply_base_fmax_by>N/A</multiply_base_fmax_by>
+		<divide_base_fmax_by>N/A</divide_base_fmax_by>
+		<offset>N/A</offset>
+	</row>
+	<row>
+		<clock_node_name>CLOCK_50</clock_node_name>
+		<type>User Pin</type>
+		<fmax_requirement>None</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<multiply_base_fmax_by>N/A</multiply_base_fmax_by>
+		<divide_base_fmax_by>N/A</divide_base_fmax_by>
+		<offset>N/A</offset>
+	</row>
+</clock_settings_summary>
+<performance>
+	<nonclk>
+		<type>Worst-case tsu</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>6.530 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case tco</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>10.752 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case tpd</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>11.708 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case th</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>-5.952 ns</actual>
+	</nonclk>
+	<clk>
+		<name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk0</name>
+		<slack>35.519 ns</slack>
+		<required>25.20 MHz ( period = 39.682 ns )</required>
+		<actual>240.21 MHz ( period = 4.163 ns )</actual>
+	</clk>
+	<clk>
+		<name>CLOCK_50</name>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>226.14 MHz ( period = 4.422 ns )</actual>
+	</clk>
+</performance>
+<compile_id>9090FD0C</compile_id>
+</talkback>
