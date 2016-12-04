@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 48 -24 216 -8)
+	(rect 56 -32 224 -16)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "FSMCLK" (rect 5 0 52 11)(font "Arial" ))
 	(pt 168 8)
@@ -37,7 +37,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 48 8 216 24)
+	(rect 56 0 224 16)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "Coord_X[9..0]" (rect 5 0 73 11)(font "Arial" ))
 	(pt 168 8)
@@ -53,7 +53,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 48 24 216 40)
+	(rect 56 16 224 32)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "Coord_Y[9..0]" (rect 5 0 73 11)(font "Arial" ))
 	(pt 168 8)
@@ -69,7 +69,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 48 -8 216 8)
+	(rect 56 -16 224 0)
 	(text "INPUT" (rect 125 0 154 10)(font "Arial" (font_size 6)))
 	(text "SW[17..0]" (rect 5 0 53 11)(font "Arial" ))
 	(pt 168 8)
@@ -133,9 +133,9 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 280 -48 480 64)
+	(rect 328 -56 528 88)
 	(text "show_square" (rect 5 0 72 11)(font "Arial" ))
-	(text "inst" (rect 8 96 26 107)(font "Arial" ))
+	(text "inst" (rect 8 128 26 139)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -165,6 +165,20 @@ applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
+		(pt 0 96)
+		(input)
+		(text "x_origin[9..0]" (rect 0 0 63 11)(font "Arial" ))
+		(text "x_origin[9..0]" (rect 21 91 84 102)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "y_origin[9..0]" (rect 0 0 63 11)(font "Arial" ))
+		(text "y_origin[9..0]" (rect 21 107 84 118)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
 		(pt 200 32)
 		(output)
 		(text "red[3..0]" (rect 0 0 41 11)(font "Arial" ))
@@ -186,40 +200,70 @@ applicable agreement for further details.
 		(line (pt 200 64)(pt 184 64)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 184 96))
+		(rectangle (rect 16 16 184 128))
 	)
 )
 (connector
-	(pt 216 -16)
-	(pt 280 -16)
-)
-(connector
-	(pt 216 0)
-	(pt 280 0)
+	(pt 568 -16)
+	(pt 568 -24)
 	(bus)
 )
 (connector
-	(pt 216 16)
-	(pt 280 16)
-	(bus)
-)
-(connector
-	(pt 216 32)
-	(pt 280 32)
-	(bus)
-)
-(connector
-	(pt 480 16)
-	(pt 576 16)
-	(bus)
-)
-(connector
-	(pt 480 0)
-	(pt 576 0)
-	(bus)
-)
-(connector
-	(pt 480 -16)
 	(pt 576 -16)
+	(pt 568 -16)
+	(bus)
+)
+(connector
+	(pt 568 -24)
+	(pt 528 -24)
+	(bus)
+)
+(connector
+	(pt 560 0)
+	(pt 560 -8)
+	(bus)
+)
+(connector
+	(pt 576 0)
+	(pt 560 0)
+	(bus)
+)
+(connector
+	(pt 560 -8)
+	(pt 528 -8)
+	(bus)
+)
+(connector
+	(pt 552 16)
+	(pt 552 8)
+	(bus)
+)
+(connector
+	(pt 576 16)
+	(pt 552 16)
+	(bus)
+)
+(connector
+	(pt 552 8)
+	(pt 528 8)
+	(bus)
+)
+(connector
+	(pt 328 -24)
+	(pt 224 -24)
+)
+(connector
+	(pt 224 -8)
+	(pt 328 -8)
+	(bus)
+)
+(connector
+	(pt 328 8)
+	(pt 224 8)
+	(bus)
+)
+(connector
+	(pt 224 24)
+	(pt 328 24)
 	(bus)
 )
