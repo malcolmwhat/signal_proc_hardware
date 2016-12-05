@@ -366,7 +366,7 @@ VGA_Controller		u1	(	//	Host Side
 							.iRST_N(DLY_RST)	);
 
 
-video_generator video_generator(.Coord_X(Coord_X), .Coord_Y(Coord_Y), .SW(SW), .FSMCLK(FSMCLK), .RED(RED), .GREEN(GREEN), .BLUE(BLUE));						
+video_generator video_generator(.Coord_X(Coord_X), .Coord_Y(Coord_Y), .SW(SW), .FSMCLK(VGA_VS), .RED(RED), .GREEN(GREEN), .BLUE(BLUE));						
 							
 //Down sample to 512x512 and use coordinates to get memory address
 assign SRAM_ADDR = {Coord_X[9:1],Coord_Y[9:1]} ;		// [17:0]
