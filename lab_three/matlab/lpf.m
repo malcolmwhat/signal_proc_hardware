@@ -6,6 +6,6 @@ function [ img_lpf ] = lpf( img, N )
 H = zeros(N,N);
 H(1:N,1:N) = 1 ./ pow2(N);
 
-img_lpf = (conv2(img,H));
+img_lpf = uint8(conv2(img,H));
 end
 
