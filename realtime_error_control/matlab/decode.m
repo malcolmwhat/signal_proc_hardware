@@ -40,14 +40,12 @@ if isempty(erasure_vector)
     G = encode(eye(5));
     H = horzcat(G(:,6:16)',eye(11));
     r_hat = decode_syndrome(r,H,3);
-
 % Case 2.
-else if length(erasure_vector) > 7
+elseif length(erasure_vector) > 7
     r_hat = r;
     r_hat(erasure_vector) = 0;
-
 % Case 3.
-else if erasure_vector(1) > 5
+elseif erasure_vector(1) > 5
     % Calculate G the normal way, then remove the column with erased parities.
     G = encode(eye(5));
     G_hat = G(no_erasure_vector);
