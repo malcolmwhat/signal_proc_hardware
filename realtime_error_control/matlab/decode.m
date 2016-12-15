@@ -35,17 +35,17 @@ no_erasure_vector = ones(1,16) - erasure_vector;
 %         we can correct 3 errors.
 
 % Case 1.
-if isempty(erasure_vector)
+if sum(erasure_vector) == 0
     % Calculate G and H then do syndrome decoding.
     G = encode(eye(5));
     H = horzcat(G(:,6:16)',eye(11));
     r_hat = decode_syndrome(r,H,3);
 % Case 2.
-elseif length(erasure_vector) > 7
+elseif sum(erasure_vector) > 7
     r_hat = r;
     r_hat(erasure_vector) = 0;
 % Case 3.
-elseif erasure_vector(1) > 5
+elseif sum(erasure_vector(1:5)) == 0
     % Calculate G the normal way, then remove the column with erased parities.
     G = encode(eye(5));
     G_hat = G(no_erasure_vector);
@@ -59,7 +59,7 @@ elseif erasure_vector(1) > 5
     r_w0_erasures = r(no_erasure_vector);
 
     % Number of errors we can expect to decode. dmin-1-erasures / 2.
-    num_errs = floor((7-length(erasure_vector))/2);
+    num_errs = floor((7-sum(erasure_vector))/2);
 
     % Attempt syndrome error correction.
     r_hat = decode_syndrome(r_w0_erasures,H_hat,num_errs);
@@ -68,6 +68,28 @@ elseif erasure_vector(1) > 5
 else
     % Calculate H Manually. Note that we will only keep non-erased parities.
 
+    % Temporary hack (I hope).
+    temp1 = [ erasure_vector(1:5) zeros(1,11) ];
+    temp2 = [ ones(1:5) no_erasure_vector(6:16) ];
+
+    r(temp1) = 0;
+
+    G = encode(eye(5));
+    G_hat = G(temp2);
+    P = G_hat(:,6:length(G_hat));
+
+    % Calculate the new H matrix the same way we would normaly, taking the
+    % dynamic size of P into consideration.
+    H_hat = [ P' eye(length(P)) ];
+
+    % Only consider the non-erased portion of the received code.
+    r_w0_erasures = r(temp2);
+
+    % Number of errors we can expect to decode. dmin-1-erasures / 2.
+    num_errs = floor((7-sum(erasure_vector))/2);
+
+    % Attempt syndrome error correction.
+    r_hat = decode_syndrome(r_w0_erasures,H_hat,num_errs);
 end
 
 % The decoded message is the first 5 bits of the input message.
