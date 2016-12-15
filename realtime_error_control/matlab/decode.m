@@ -4,7 +4,7 @@ function [ m ] = decode( r )
 % Find the erasure indeces.
 erasure_vector = r==0.5;
 % As well as the set of non erased indeces.
-no_erasure_vector = zeros(1,16) - erasure_vector;
+no_erasure_vector = ones(1,16) - erasure_vector;
 
 % There are a few cases of what could be erased:
 % Case 1: There are no erasures.
@@ -66,6 +66,7 @@ elseif erasure_vector(1) > 5
 
 % Case 4.
 else
+    % Calculate H Manually. Note that we will only keep non-erased parities.
 
 end
 
