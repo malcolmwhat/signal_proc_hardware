@@ -16,16 +16,14 @@ entity quantizer is
 	port(
 		clock : in std_logic;
 		data_in : in std_logic_vector(31 downto 0);
-		quantized_data : out std_logic_vector(9 downto 0)
+		message1 : out std_logic_vector(4 downto 0);
+		message2 : out std_logic_vector(4 downto 0)
 	);
 end quantizer;
 
 
 architecture quant of quantizer is
 begin
-	-- Synchronously set the output to the first 10 bits of the input.
-	set_output : process(rising_edge(clock))
-	begin
-		quantized_data <= data_in(9 downto 0);
-	end process;
+	message1 <= data_in(4 downto 0);
+	message2 <= data_in(9 downto 5);
 end quant;
