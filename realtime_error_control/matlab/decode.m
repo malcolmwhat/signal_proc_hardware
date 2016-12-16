@@ -68,7 +68,7 @@ elseif sum(erasure_vector(1:5)) == 0
 
 % Case 4.
 else
-    % Calculate H Manually. Note that we will only keep non-erased parities.
+    % Determine H matrix Manually. We will only keep non-erased parities.
 
     % Temporary hack (I hope).
     temp1 = logical([ erasure_vector(1:5) zeros(1,11) ]);
@@ -88,7 +88,7 @@ else
     r_w0_erasures = r(temp2);
 
     % Number of errors we can expect to decode. dmin-1-erasures / 2.
-    num_errs = floor((7-sum(erasure_vector))/2);
+    num_errs = floor((7-sum(~temp2))/2);
 
     % Attempt syndrome error correction.
     r_hat = syndrome_correction(r_w0_erasures,H_hat,num_errs);
