@@ -4,7 +4,7 @@ function [ m ] = decode( r )
 % Find the erasure indeces.
 erasure_vector = r==0.5;
 % As well as the set of non erased indeces.
-no_erasure_vector = ones(1,16) - erasure_vector;
+no_erasure_vector = ~erasure_vector;
 
 % There are a few cases of what could be erased:
 % Case 1: There are no erasures.
@@ -39,7 +39,7 @@ if sum(erasure_vector) == 0
     % Calculate G and H then do syndrome decoding.
     G = encode(eye(5));
     H = horzcat(G(:,6:16)',eye(11));
-    r_hat = decode_syndrome(r,H,3);
+    r_hat = syndrome_correction(r,H,3);
 % Case 2.
 elseif sum(erasure_vector) > 7
     r_hat = r;
@@ -48,12 +48,14 @@ elseif sum(erasure_vector) > 7
 elseif sum(erasure_vector(1:5)) == 0
     % Calculate G the normal way, then remove the column with erased parities.
     G = encode(eye(5));
-    G_hat = G(no_erasure_vector);
+    G_hat = G(:,no_erasure_vector);
     P = G_hat(:,6:length(G_hat));
+
+    [ P_rows, P_columns ] = size(P); %#ok<ASGLU>
 
     % Calculate the new H matrix the same way we would normaly, taking the
     % dynamic size of P into consideration.
-    H_hat = [ P' eye(length(P)) ];
+    H_hat = [ P' eye(P_columns) ];
 
     % Only consider the non-erased portion of the received code.
     r_w0_erasures = r(no_erasure_vector);
@@ -62,20 +64,20 @@ elseif sum(erasure_vector(1:5)) == 0
     num_errs = floor((7-sum(erasure_vector))/2);
 
     % Attempt syndrome error correction.
-    r_hat = decode_syndrome(r_w0_erasures,H_hat,num_errs);
+    r_hat = syndrome_correction(r_w0_erasures,H_hat,num_errs);
 
 % Case 4.
 else
     % Calculate H Manually. Note that we will only keep non-erased parities.
 
     % Temporary hack (I hope).
-    temp1 = [ erasure_vector(1:5) zeros(1,11) ];
-    temp2 = [ ones(1:5) no_erasure_vector(6:16) ];
+    temp1 = logical([ erasure_vector(1:5) zeros(1,11) ]);
+    temp2 = logical([ ones(1,5) no_erasure_vector(6:16) ]);
 
     r(temp1) = 0;
 
     G = encode(eye(5));
-    G_hat = G(temp2);
+    G_hat = G(:,temp2);
     P = G_hat(:,6:length(G_hat));
 
     % Calculate the new H matrix the same way we would normaly, taking the
@@ -89,7 +91,7 @@ else
     num_errs = floor((7-sum(erasure_vector))/2);
 
     % Attempt syndrome error correction.
-    r_hat = decode_syndrome(r_w0_erasures,H_hat,num_errs);
+    r_hat = syndrome_correction(r_w0_erasures,H_hat,num_errs);
 end
 
 % The decoded message is the first 5 bits of the input message.
