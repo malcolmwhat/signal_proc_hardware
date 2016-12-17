@@ -26,16 +26,9 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "clock" (rect 0 0 20 12)(font "Arial" ))
-		(text "clock" (rect 21 27 41 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 1))
-	)
-	(port
-		(pt 0 48)
-		(input)
 		(text "data_in[31..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "data_in[31..0]" (rect 21 43 72 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
+		(text "data_in[31..0]" (rect 21 27 72 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
 		(pt 216 32)

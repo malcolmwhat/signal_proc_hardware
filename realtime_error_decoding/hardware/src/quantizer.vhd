@@ -14,7 +14,6 @@ use ieee.std_logic_1164.all;
 
 entity quantizer is
 	port(
-		clock : in std_logic;
 		data_in : in std_logic_vector(31 downto 0);
 		message1 : out std_logic_vector(4 downto 0);
 		message2 : out std_logic_vector(4 downto 0)
