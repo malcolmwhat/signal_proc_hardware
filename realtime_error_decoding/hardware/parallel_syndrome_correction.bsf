@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 192 144)
+	(rect 16 16 192 176)
 	(text "parallel_syndrome_correction" (rect 5 0 171 13)(font "Arial" (font_size 8)))
-	(text "inst" (rect 8 113 26 124)(font "Arial" ))
+	(text "inst" (rect 8 145 26 156)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -52,6 +52,20 @@ applicable agreement for further details.
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
+		(pt 0 96)
+		(input)
+		(text "r5[15..0]" (rect 0 0 48 13)(font "Arial" (font_size 8)))
+		(text "r5[15..0]" (rect 21 91 69 104)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "r6[15..0]" (rect 0 0 48 13)(font "Arial" (font_size 8)))
+		(text "r6[15..0]" (rect 21 107 69 120)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
 		(pt 176 32)
 		(output)
 		(text "m_hat1[4..0]" (rect 0 0 71 13)(font "Arial" (font_size 8)))
@@ -79,7 +93,21 @@ applicable agreement for further details.
 		(text "m_hat4[4..0]" (rect 84 75 155 88)(font "Arial" (font_size 8)))
 		(line (pt 176 80)(pt 160 80)(line_width 3))
 	)
+	(port
+		(pt 176 96)
+		(output)
+		(text "m_hat5[4..0]" (rect 0 0 71 13)(font "Arial" (font_size 8)))
+		(text "m_hat5[4..0]" (rect 84 91 155 104)(font "Arial" (font_size 8)))
+		(line (pt 176 96)(pt 160 96)(line_width 3))
+	)
+	(port
+		(pt 176 112)
+		(output)
+		(text "m_hat6[4..0]" (rect 0 0 71 13)(font "Arial" (font_size 8)))
+		(text "m_hat6[4..0]" (rect 84 107 155 120)(font "Arial" (font_size 8)))
+		(line (pt 176 112)(pt 160 112)(line_width 3))
+	)
 	(drawing
-		(rectangle (rect 16 16 160 112))
+		(rectangle (rect 16 16 160 144))
 	)
 )

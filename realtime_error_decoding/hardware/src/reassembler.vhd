@@ -14,19 +14,23 @@ entity reassembler is
 		clock : in std_logic;
 		m_hat1 : in std_logic_vector(4 downto 0);
 		m_hat2 : in std_logic_vector(4 downto 0);
+		m_hat3 : in std_logic_vector(4 downto 0);
+		m_hat4 : in std_logic_vector(4 downto 0);
+		m_hat5 : in std_logic_vector(4 downto 0);
+		m_hat6 : in std_logic_vector(4 downto 0);
 		data_out : out std_logic_vector(31 downto 0)
 	);
 end reassembler;
 
 architecture reassemble of reassembler is
-	signal padding : std_logic_vector(21 downto 0) := (others => '0');
+	signal padding : std_logic_vector(1 downto 0) := (others => '0');
 	begin
 	padding <= (others => '0');
 	
 	sync_set : process (clock) is
 	begin
 		if rising_edge(clock) then
-			data_out <= padding & m_hat2 & m_hat1;
+			data_out <= m_hat1 & m_hat2 & m_hat3 & m_hat4 & m_hat5 & m_hat6 & padding;
 		end if;
 	end process sync_set;
 end reassemble;
