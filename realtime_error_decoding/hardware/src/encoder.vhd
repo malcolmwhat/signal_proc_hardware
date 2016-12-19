@@ -40,5 +40,5 @@ begin
 	p11 <= message(0) XOR message(1) XOR message(2) XOR message(3) XOR message(4);
 	
 	-- Set the output by concatenating the parities to the end of the message.
-	codeword <= message & p1 & p2 & p3 & p4 & p5 & p6 & p7 & p8 & p9 & p10 & p11;
+	codeword <= p11 & p10 & p9 & p8 & p7 & p6 & p5 & p4 & p3 & p2 & p1 & message;
 end enc; -- encoder
