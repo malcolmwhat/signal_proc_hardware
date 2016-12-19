@@ -370,64 +370,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 928 128 1136 208)
-	(text "reassembler" (rect 5 0 68 11)(font "Arial" ))
-	(text "inst6" (rect 8 64 32 75)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "m_hat1[4..0]" (rect 0 0 61 11)(font "Arial" ))
-		(text "m_hat1[4..0]" (rect 21 27 82 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "m_hat2[4..0]" (rect 0 0 61 11)(font "Arial" ))
-		(text "m_hat2[4..0]" (rect 21 43 82 54)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 208 32)
-		(output)
-		(text "data_out[31..0]" (rect 0 0 74 11)(font "Arial" ))
-		(text "data_out[31..0]" (rect 125 27 199 38)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 192 64))
-	)
-)
-(symbol
-	(rect 928 216 1136 296)
-	(text "reassembler" (rect 5 0 68 11)(font "Arial" ))
-	(text "inst7" (rect 8 64 32 75)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "m_hat1[4..0]" (rect 0 0 61 11)(font "Arial" ))
-		(text "m_hat1[4..0]" (rect 21 27 82 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "m_hat2[4..0]" (rect 0 0 61 11)(font "Arial" ))
-		(text "m_hat2[4..0]" (rect 21 43 82 54)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 208 32)
-		(output)
-		(text "data_out[31..0]" (rect 0 0 74 11)(font "Arial" ))
-		(text "data_out[31..0]" (rect 125 27 199 38)(font "Arial" ))
-		(line (pt 208 32)(pt 192 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 192 64))
-	)
-)
-(symbol
 	(rect 672 128 848 256)
 	(text "parallel_syndrome_correction" (rect 5 0 171 13)(font "Arial" (font_size 8)))
 	(text "inst4" (rect 8 113 32 124)(font "Arial" ))
@@ -491,6 +433,78 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 160 112))
 	)
 )
+(symbol
+	(rect 928 88 1136 200)
+	(text "reassembler" (rect 5 0 68 11)(font "Arial" ))
+	(text "inst6" (rect 8 96 32 107)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 27 11)(font "Arial" ))
+		(text "clock" (rect 21 27 48 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "m_hat1[4..0]" (rect 0 0 61 11)(font "Arial" ))
+		(text "m_hat1[4..0]" (rect 21 43 82 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "m_hat2[4..0]" (rect 0 0 61 11)(font "Arial" ))
+		(text "m_hat2[4..0]" (rect 21 59 82 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "data_out[31..0]" (rect 0 0 74 11)(font "Arial" ))
+		(text "data_out[31..0]" (rect 125 27 187 38)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 96))
+	)
+)
+(symbol
+	(rect 928 216 1136 328)
+	(text "reassembler" (rect 5 0 68 11)(font "Arial" ))
+	(text "inst7" (rect 8 96 32 107)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 27 11)(font "Arial" ))
+		(text "clock" (rect 21 27 48 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "m_hat1[4..0]" (rect 0 0 61 11)(font "Arial" ))
+		(text "m_hat1[4..0]" (rect 21 43 82 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "m_hat2[4..0]" (rect 0 0 61 11)(font "Arial" ))
+		(text "m_hat2[4..0]" (rect 21 59 82 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "data_out[31..0]" (rect 0 0 74 11)(font "Arial" ))
+		(text "data_out[31..0]" (rect 125 27 187 38)(font "Arial" ))
+		(line (pt 208 32)(pt 192 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 96))
+	)
+)
 (connector
 	(pt 384 40)
 	(pt 384 48)
@@ -526,10 +540,6 @@ applicable agreement for further details.
 (connector
 	(pt 144 40)
 	(pt 384 40)
-)
-(connector
-	(pt 472 56)
-	(pt 1152 56)
 )
 (connector
 	(pt 144 128)
@@ -602,21 +612,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1136 160)
-	(pt 1160 160)
-	(bus)
-)
-(connector
-	(pt 1160 160)
-	(pt 1160 120)
-	(bus)
-)
-(connector
-	(pt 1224 120)
-	(pt 1160 120)
-	(bus)
-)
-(connector
 	(pt 1136 248)
 	(pt 1184 248)
 	(bus)
@@ -632,43 +627,13 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 872 264)
-	(pt 928 264)
-	(bus)
-)
-(connector
-	(pt 872 264)
-	(pt 872 208)
-	(bus)
-)
-(connector
 	(pt 848 208)
 	(pt 872 208)
 	(bus)
 )
 (connector
-	(pt 888 248)
-	(pt 928 248)
-	(bus)
-)
-(connector
-	(pt 888 248)
-	(pt 888 192)
-	(bus)
-)
-(connector
 	(pt 848 192)
 	(pt 888 192)
-	(bus)
-)
-(connector
-	(pt 928 176)
-	(pt 848 176)
-	(bus)
-)
-(connector
-	(pt 848 160)
-	(pt 928 160)
 	(bus)
 )
 (connector
@@ -691,4 +656,85 @@ applicable agreement for further details.
 	(pt 576 208)
 	(bus)
 )
+(connector
+	(pt 848 160)
+	(pt 856 160)
+	(bus)
+)
+(connector
+	(pt 848 176)
+	(pt 864 176)
+	(bus)
+)
+(connector
+	(pt 1136 120)
+	(pt 1224 120)
+	(bus)
+)
+(connector
+	(pt 864 176)
+	(pt 864 152)
+	(bus)
+)
+(connector
+	(pt 864 152)
+	(pt 928 152)
+	(bus)
+)
+(connector
+	(pt 856 136)
+	(pt 856 160)
+	(bus)
+)
+(connector
+	(pt 928 136)
+	(pt 856 136)
+	(bus)
+)
+(connector
+	(pt 872 208)
+	(pt 872 280)
+	(bus)
+)
+(connector
+	(pt 928 280)
+	(pt 872 280)
+	(bus)
+)
+(connector
+	(pt 888 192)
+	(pt 888 264)
+	(bus)
+)
+(connector
+	(pt 888 264)
+	(pt 928 264)
+	(bus)
+)
+(connector
+	(pt 928 120)
+	(pt 912 120)
+)
+(connector
+	(pt 472 56)
+	(pt 912 56)
+)
+(connector
+	(pt 912 56)
+	(pt 1152 56)
+)
+(connector
+	(pt 912 248)
+	(pt 928 248)
+)
+(connector
+	(pt 912 56)
+	(pt 912 120)
+)
+(connector
+	(pt 912 120)
+	(pt 912 248)
+)
 (junction (pt 1152 56))
+(junction (pt 912 56))
+(junction (pt 912 120))
