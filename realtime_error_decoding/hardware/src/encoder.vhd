@@ -26,6 +26,7 @@ architecture enc of encoder is
 	signal p10 : std_logic;
 	signal p11 : std_logic;
 begin
+	-- Set the parities based on the input message.
 	p1 <= message(0) XOR message(1) XOR message(2);
 	p2 <= message(0) XOR message(1) XOR message(3);
 	p3 <= message(0) XOR message(1) XOR message(4);
@@ -38,5 +39,6 @@ begin
 	p10 <= message(2) XOR message(3) XOR message(4);
 	p11 <= message(0) XOR message(1) XOR message(2) XOR message(3) XOR message(4);
 	
+	-- Set the output by concatenating the parities to the end of the message.
 	codeword <= message & p1 & p2 & p3 & p4 & p5 & p6 & p7 & p8 & p9 & p10 & p11;
 end enc; -- encoder
