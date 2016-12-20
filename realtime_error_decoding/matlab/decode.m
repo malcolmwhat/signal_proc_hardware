@@ -69,29 +69,59 @@ elseif sum(erasure_vector(1:5)) == 0
 % Case 4.
 else
     % Determine H matrix Manually. We will only keep non-erased parities.
-
-    % Temporary hack (I hope).
-    temp1 = logical([ erasure_vector(1:5) zeros(1,11) ]);
-    temp2 = logical([ ones(1,5) no_erasure_vector(6:16) ]);
-
-    r(temp1) = 0;
-
-    G = encode(eye(5));
-    G_hat = G(:,temp2);
-    P = G_hat(:,6:length(G_hat));
-
-    % Calculate the new H matrix the same way we would normaly, taking the
-    % dynamic size of P into consideration.
-    H_hat = [ P' eye(length(P)) ];
-
-    % Only consider the non-erased portion of the received code.
-    r_w0_erasures = r(temp2);
-
-    % Number of errors we can expect to decode. dmin-1-erasures / 2.
-    num_errs = floor((7-sum(~temp2))/2);
-
-    % Attempt syndrome error correction.
-    r_hat = syndrome_correction(r_w0_erasures,H_hat,num_errs);
+    G = mod(encode(eye(5)),2);
+    G_hat = G(:,no_erasure_vector);
+    
+    % G_hat will not be in rre form, so do row reduction.
+    G_hat_red = mod(rref(G_hat),2);
+    
+    if (sum(G_hat_red(5,:))==0)
+        G_hat_red = G_hat_red(1:4,:);
+    end
+    
+    [ g_height, g_width ] = size(G_hat_red);
+    
+    P = G_hat_red(:,g_height:g_width);
+    
+    H_hat = [ P' eye(g_width - g_height)];
+    
+    r_w0_era = r(no_erasure_vector);
+    
+    num_errs = floor((7-sum(erasure_vector))/2);
+    
+    c_hat = syndrome_correction(r_w0_era, H_hat, num_errs);
+    
+    r_hat = zeros(1,16);
+    j = 1;
+    for i = 1:16
+        if no_erasure_vector(i)
+            r_hat(i) = c_hat(j);
+            j = j + 1;
+        else
+            r_hat(i) = 0.5;
+        end
+    end
+    
+    
+    if sum(erasure_vector) < 7 then
+        while sum(erasure_vector)
+            equns = [
+                r_hat(1) r_hat(2) r_hat(3) r_hat(6);
+                r_hat(1) r_hat(2) r_hat(4) r_hat(7);
+                r_hat(1) r_hat(2) r_hat(5) r_hat(8);
+                r_hat(1) r_hat(3) r_hat(4) r_hat(9);
+                r_hat(1) r_hat(3) r_hat(5) r_hat(10);
+                r_hat(1) r_hat(4) r_hat(5) r_hat(11);
+                r_hat(2) r_hat(3) r_hat(4) r_hat(12);
+                r_hat(2) r_hat(3) r_hat(5) r_hat(13);
+                r_hat(2) r_hat(4) r_hat(5) r_hat(14);
+                r_hat(3) r_hat(4) r_hat(5) r_hat(15);
+                r_hat(1) r_hat(2) r_hat(3) r_hat(4) r_hat(5) r_hat(16);
+            ];
+            
+            
+        end
+    end
 end
 
 % The decoded message is the first 5 bits of the input message.
