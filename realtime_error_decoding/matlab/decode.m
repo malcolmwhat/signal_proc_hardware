@@ -81,7 +81,9 @@ else
     
     [ g_height, g_width ] = size(G_hat_red);
     
-    P = G_hat_red(:,g_height:g_width);
+    left_lim = g_height+1;
+    
+    P = G_hat_red(:,left_lim:g_width);
     
     H_hat = [ P' eye(g_width - g_height)];
     
@@ -103,23 +105,41 @@ else
     end
     
     
-    if sum(erasure_vector) < 7 then
-        while sum(erasure_vector)
+    if sum(erasure_vector) < 7
+        count = 1;
+        while sum(erasure_vector) && count < 10
             equns = [
-                r_hat(1) r_hat(2) r_hat(3) r_hat(6);
-                r_hat(1) r_hat(2) r_hat(4) r_hat(7);
-                r_hat(1) r_hat(2) r_hat(5) r_hat(8);
-                r_hat(1) r_hat(3) r_hat(4) r_hat(9);
-                r_hat(1) r_hat(3) r_hat(5) r_hat(10);
-                r_hat(1) r_hat(4) r_hat(5) r_hat(11);
-                r_hat(2) r_hat(3) r_hat(4) r_hat(12);
-                r_hat(2) r_hat(3) r_hat(5) r_hat(13);
-                r_hat(2) r_hat(4) r_hat(5) r_hat(14);
-                r_hat(3) r_hat(4) r_hat(5) r_hat(15);
-                r_hat(1) r_hat(2) r_hat(3) r_hat(4) r_hat(5) r_hat(16);
+                1 2 3 6;
+                1 2 4 7;
+                1 2 5 8;
+                1 3 4 9;
+                1 3 5 10;
+                1 4 5 11;
+                2 3 4 12;
+                2 3 5 13;
+                2 4 5 14;
+                3 4 5 15;
             ];
             
-            
+            for i = 1:10
+                eq = equns(i,:);
+                r_eq = r_hat(eq);
+                ers = find(r_eq==0.5);
+                
+                if length(ers)==1
+                    r_eq(eq==0.5) = 0;
+                    r_hat(eq(ers(1))) = mod(sum(r_eq),2);
+                end
+            end
+            eq = [1 2 3 4 5 16];
+            r_eq = r_hat(eq);
+            ers = find(r_eq==0.5);
+
+            if length(ers)==1
+                r_eq(eq==0.5) = 0;
+                r_hat(eq(ers(1))) = mod(sum(r_eq),2);
+            end
+            count = count + 1;
         end
     end
 end

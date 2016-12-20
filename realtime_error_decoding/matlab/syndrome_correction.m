@@ -19,7 +19,7 @@ rec_syndrome = mod(r* H',2);
 % Check for the syndrome in our syndrome table.
 synd_row = ismember(syndrome_table,rec_syndrome,'rows');
 
-if isempty(error_vectors(synd_row,:))
+if isempty(error_vectors(synd_row,:)) || sum(synd_row) > 1
     r_hat = r;
 else
     r_hat = mod(error_vectors(synd_row,:)+r,2);

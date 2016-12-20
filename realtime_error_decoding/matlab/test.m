@@ -79,6 +79,6 @@ end
 figure
 surf(error_probabilities, erasure_probabilities, bit_error_rates);
 title('Bit Error Curve in Presence of Erasures and Errors');
-xlabel('Probability of Error');
-ylabel('Probability of Erasure');
-zlabel('Bit Error Rate');
+xlabel('Probability of Error (max 1)');
+ylabel('Probability of Erasure (max 1)');
+zlabel('Bit Error Rate (%)');
