@@ -28,36 +28,26 @@ begin
 	process (input_code1, input_code2, random_noise, noise_control) is
 		variable effective_n1 : std_logic_vector(15 downto 0);
 		variable effective_n2 : std_logic_vector(15 downto 0);
+		variable intermediate1 : std_logic_vector(15 downto 0) := (others => '0');
+		variable intermediate2 : std_logic_vector(15 downto 0) := (others => '0');
 		variable ones_count1 : integer range 0 to 15 := 0;
 		variable ones_count2 : integer range 0 to 15 := 0;
 	begin
 		effective_n1 := random_noise(31 downto 16);
 		effective_n1 := random_noise(15 downto 0);
 		
-		-- Combinational loop which removes every `s`th 1, where `s` is 
-		-- the integer value given by the evaluation of the switches.
 		for i in 0 to 15 loop
-			-- Check for a one in the current index.
-			if effective_n1(i) = '1' then
-				-- If found, increment the counter and check the mod of switches.
-				ones_count1 := ones_count1 + 1;
-				if (ones_count1 mod switches) = 0 then
-					-- If this one's occurence was a multiple of switches, set to 0.
-					effective_n1(i) := '0';
-				end if;
-			end if;
-			
-			-- Same logic as above but for the second noise vector.
-			if effective_n2(i) = '1' then
-				ones_count2 := ones_count2 + 1;
-				if (ones_count2 mod switches) = 0 then
-					effective_n2(i) := '0';
-				end if;
+			if ((i mod switches) = 0) then
+				intermediate1(i) := effective_n1(i);
+				intermediate2(i) := effective_n2(i);
+			else
+				intermediate1(i) := '0';
+				intermediate2(i) := '0';
 			end if;
 		end loop;
 		
-		effective_noise1 <= effective_n1;
-		effective_noise2 <= effective_n2;
+		effective_noise1 <= intermediate1;
+		effective_noise2 <= intermediate2;
 	end process;
 	
 	output_code1 <= input_code1 XOR effective_noise1;
