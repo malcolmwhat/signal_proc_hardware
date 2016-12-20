@@ -14,7 +14,7 @@ end
 syndrome_table = mod(error_vectors*H',2);
 
 % Get the syndrome of the input vector.
-rec_syndrome = mod(r* ',2);
+rec_syndrome = mod(r* H',2);
 
 % Check for the syndrome in our syndrome table.
 synd_row = ismember(syndrome_table,rec_syndrome,'rows');
