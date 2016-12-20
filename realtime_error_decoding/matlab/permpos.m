@@ -4,8 +4,8 @@ function C = permpos(M,N)
 %   B = PERMPOS(M,N) where M and N are non-negative integers produces a
 %   logical (N!/M!(N-M)!)-by-N matrix in which each row contains a unique
 %   permation of M trues and (N-M) falses. Note that each column will hence
-%   contain (N-1) trues. 
-%   
+%   contain (N-1) trues.
+%
 %   B = PERMPOS(V,N) where V is a vector of length M produces a matrix
 %   where each row a contains the values of V in preserved order, but
 %   uniquely permuted at the N columns. The remaining positions are zero.
@@ -38,11 +38,11 @@ function C = permpos(M,N)
 % 1.1 may 2006 - proper implementation of nchoosek
 % 2.0 may 2006 - implementation of first argument being a matrix
 % 2.1 mar 2007 - removed unneccesary check for maximum sizes of N and M
-%              - 
+%              -
 
 error(nargchk(2,2,nargin)) ;
 
-if numel(M)>1 || M < 0 || isnan(M) || isinf(M), 
+if numel(M)>1 || M < 0 || isnan(M) || isinf(M),
     if ndims(M) > 2 || ~any(size(M)==1),
         error('First argument should be a non-negative integer or a vector') ;
     end
@@ -68,7 +68,7 @@ elseif M == 0,
     B = false(1,N) ;
 elseif M == N,
     % only true values
-    B = true(1,N) ;    
+    B = true(1,N) ;
 elseif M==1,
     % one true value -> on diagonal
     B = logical(eye(N)) ;
@@ -78,17 +78,17 @@ else
     nr = size(ind,1) ;       % equals nchoosek(N,M)
     ind = sub2ind([nr N],repmat([1:nr].',1,M),ind) ;  % create linear indices
     % fill the matrix
-    B = false(nr,N) ; 
-    B(ind) = true ;    
+    B = false(nr,N) ;
+    B(ind) = true ;
 end
 
-if ~isempty(A),   
+if ~isempty(A),
     if numel(A)==1,
         % negative scalar
         C = zeros(size(B)) ;
         C(B) = A ;
     else
-        % vector argument 
+        % vector argument
         C = cumsum(B,2) ;
         C(B) = A(C(B)) ;
         C(~B) = 0 ;
