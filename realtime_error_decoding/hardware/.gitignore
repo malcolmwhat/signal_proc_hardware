@@ -1,6 +1,0 @@
-output_files/
-db/
-incremental_db/
-*.bak
-*.summary
-*.done
